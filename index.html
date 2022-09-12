@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+            let targetString = "this is alaa ebrahim alaa ebrahim";
+            function checkIsExist(str, arr) {
+                for (let index = 0; index < arr.length; index++) {
+                    if(str==arr[index]){
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function checkRepetition(str) {
+              let distinctWords = [];
+              let targetStringAsArr = str.split(" ");
+              for (let index = 0; index < targetStringAsArr.length; index++) {
+                console.log(targetStringAsArr[index],checkIsExist(targetStringAsArr[index],distinctWords));
+                if (!checkIsExist(targetStringAsArr[index],distinctWords)) {
+                    distinctWords.push(targetStringAsArr[index]);
+                }
+              }
+              return distinctWords;
+            }
+        
+            console.log(checkRepetition(targetString).join(' '));
+    </script>
+  </body>
+</html>
